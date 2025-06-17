@@ -1,0 +1,43 @@
+Agent executed at 2025-06-16 20:34:23
+Prompt: I have below submodules in `/code/rtl` directory that together implement the functionality of a UART system:
+
+- `uart_tx`: Manages transmission including start/stop/parity handling.
+- `uart_rx`: Manages reception with start detection, oversampling, and parity checking.
+- `baud_gen`: Generates TX/RX baud clock pulses and manages enable signals.
+- `cdc_sync`: Synchronizes asynchronous RX input into the core clock domain.
+- `areset_sync`: Synchronizes asynchronous de-assertion of reset for clean transitions.
+
+These modules need to be integrated into a top-level RTL module named `uart_top`.
+
+The full specification for this top module is documented in **`docs/UART_Specifications.md`**. Please follow that spec precisely when wiring up ports, handling loopback behavior, and generating status outputs.
+
+The final top-level module should:
+
+1. **Integrate** all submodules and connect them per the specification.
+2. **Support full-duplex UART** with loopback functionality when `i_lpbk_mode_en` is asserted.
+3. **Generate internal resets** for `uart_tx` and `uart_rx` using `areset_sync` based on `rstn`, `i_tx_rst`, and `i_rx_rst`.
+4. **Synchronize** the incoming RX signal using `cdc_sync`.
+5. **Use** the `baud_gen` module to generate TX and RX baud clocks and manage TX/RX enable signals.
+6. **Connect** valid-ready handshaking signals between the top-level and submodules.
+7. **Expose** all required control/status ports as defined in the spec, including `o_tx_state`, `o_rx_state`, `o_rx_break`, `o_parity_err`, and `o_frame_err`.
+
+#### Testbench Requirement:
+In addition to creating the top module, develop a **SystemVerilog testbench** in `verif` directory that:
+- Instantiates `uart_top` and drives it with appropriate stimulus.
+- Initializes core and resets all domains.
+- Sends a variety of TX payloads with different configurations of:
+  - Parity (none/odd/even)
+  - Stop bits (1 or 2)
+  - Loopback mode enabled/disabled
+  - Break frame generation
+- Monitors and checks reception of expected data via the RX interface.
+- Includes at least one **loopback test** and one **normal TX-RX test** using serial wiring.
+- Logs and asserts for `parity_err`, `frame_err`, and `o_rx_break` for error-checking validation.
+- Uses the valid/ready handshake mechanism for TX and RX.
+- Covers corner cases like:
+  - Minimum and maximum baud rate values
+  - Data bursts and back-to-back transfers
+  - Simulated framing errors and parity mismatches (if possible)
+
+Please implement this integrated top-level UART module as `uart_top` in a single SystemVerilog file named `uart_top.sv` and a separate testbench file named **`tb_uart_top.sv`** to demonstrate functionality and compliance with the spec.
+
