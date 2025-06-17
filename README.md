@@ -3,7 +3,9 @@ The problem set is designed to evaluate agents, with support for tool interactio
 for hardware design task.
 
 Directory structure:
+
 -examples: example dummy agent
+
 -work: a datapoint example of the docker env
 
 # Quick Start
