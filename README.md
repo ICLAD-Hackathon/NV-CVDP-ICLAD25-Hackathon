@@ -33,13 +33,13 @@ Directory structure:
 1. **Create a virtual environment** (recommended):
 ```bash
 # Create virtual environment
-python -m venv cvdp_env
+python -m venv agent_env
 
 # Activate virtual environment
 # On Linux/macOS:
-source cvdp_env/bin/activate
+source agent_env/bin/activate
 # On Windows:
-cvdp_env\Scripts\activate
+agent_env\Scripts\activate
 ```
 
 2. **Install Python dependencies**:
