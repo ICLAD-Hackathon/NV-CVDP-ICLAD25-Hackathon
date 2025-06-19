@@ -1,0 +1,47 @@
+
+=== Starting Preparation Phase ===
+Starting cvdp_agentic_programmable_fsm_dynamic_state_encoding_0001 repository execution...
+Creating harness environment for datapoint: work/cvdp_agentic_programmable_fsm_dynamic_state_encoding_0001
+All preparation tasks completed successfully
+=== Preparation Phase Complete ===
+
+Writing preparation results...
+
+=== Starting Agent Processing Phase ===
+Starting agent processing for cvdp_agentic_programmable_fsm_dynamic_state_encoding_0001...
+Running agent inside work/cvdp_agentic_programmable_fsm_dynamic_state_encoding/harness/1...
+Agent output will be saved to: work/cvdp_agentic_programmable_fsm_dynamic_state_encoding/reports/1_agent.txt
+Default network already exists in /home/chiatungh/scratch/NVIDIA-ICLAD25-Hackathon/work/cvdp_agentic_programmable_fsm_dynamic_state_encoding/harness/1/docker-compose-agent.yml, not modifying
+Created agent script: /home/chiatungh/scratch/NVIDIA-ICLAD25-Hackathon/work/cvdp_agentic_programmable_fsm_dynamic_state_encoding/harness/1/run_docker_agent.sh
+Executing agent script: work/cvdp_agentic_programmable_fsm_dynamic_state_encoding/harness/1/run_docker_agent.sh
+All agent processing tasks completed successfully
+=== Agent Processing Phase Complete ===
+
+
+=== Starting Execution Phase ===
+Starting cvdp_agentic_programmable_fsm_dynamic_state_encoding_0001 harness execution...
+Running service: direct:
+
+Ensuring /home/chiatungh/scratch/NVIDIA-ICLAD25-Hackathon/work/cvdp_agentic_programmable_fsm_dynamic_state_encoding/harness/1/docker-compose.yml has correct network configuration
+Default network already exists in /home/chiatungh/scratch/NVIDIA-ICLAD25-Hackathon/work/cvdp_agentic_programmable_fsm_dynamic_state_encoding/harness/1/docker-compose.yml, not modifying
+All execution tasks completed successfully
+=== Execution Phase Complete ===
+
+
+=== Benchmark Report ===
+Dataset: ./dataset/hackathon_agentic_easy_example.jsonl
+Generated: 2025-06-19 15:09:14
+
+=== Run Configuration ===
+Golden Mode: No
+Patches Disabled: No
+Force Agentic: No
+Force Copilot: No
+Include Golden Patch: No
+Include Harness: No
+Model/Agent: example-agent
+=======================
+
+Generating text report: work/report.txt
+Text report generated: work/report.txt
+Benchmark execution time: Min: 4.2264723777771 - Max: 4.2264723777771 - Avg: 4.2264723777771
