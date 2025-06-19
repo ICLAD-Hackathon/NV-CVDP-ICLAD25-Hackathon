@@ -62,11 +62,13 @@ cd my-agent/
 
 **2. Run the agent on one example:**
 ```bash
-cd work/harness/3748/
+cd work/cvdp_agentic_programmable_fsm_dynamic_state_encoding/harness/1/
 # invoke the agent run
 ./run_docker_agent.sh
 # debug the agent
 ./run_docker_agent.sh -d
+# run evaluation
+./run_docker_harness_direct.sh
 ```
 
 ### Start your own agent
