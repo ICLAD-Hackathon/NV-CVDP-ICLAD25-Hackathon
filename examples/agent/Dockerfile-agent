@@ -1,4 +1,4 @@
-FROM cvdp-example-agent-base
+FROM example-agent-base
 
 WORKDIR /app
 
