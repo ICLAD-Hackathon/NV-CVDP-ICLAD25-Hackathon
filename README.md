@@ -59,8 +59,14 @@ cd my-agent/
 # Build using the provided script
 ./build_agent.sh
 ```
+**2. Run the agent on batch mode:**
+```bash
+python run_benchmark.py -f ./dataset/hackathon-agentic-obfuscated_final_corrected.jsonl -l -g example-agent
+# check the run and each problem
+cd work
+```
 
-**2. Run the agent on one example:**
+**3. Run the agent on one example:**
 ```bash
 cd work/cvdp_agentic_programmable_fsm_dynamic_state_encoding/harness/1/
 # invoke the agent run
