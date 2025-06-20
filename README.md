@@ -62,6 +62,8 @@ cd my-agent/
 **2. Run the agent on batch mode:**
 ```bash
 python run_benchmark.py -f ./dataset/hackathon-agentic-obfuscated_final_corrected.jsonl -l -g example-agent
+# check the total benchmark pass/fail status
+python run_reporter.py work/report.json | less
 # check the run and each problem
 cd work
 ```
